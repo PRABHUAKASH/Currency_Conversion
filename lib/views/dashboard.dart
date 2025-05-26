@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart'; // Import the file where CurrencyForm is defined
+import 'package:Currency_Conversion/views/currency_form.dart';
+import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -8,32 +9,26 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  final List<dynamic> historyList = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Currency Exchange',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
+        title: Text("Currency Converter",
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white)),
         backgroundColor: Colors.blue,
       ),
-      body: Center(
-          child: Container(
-        padding: const EdgeInsets.all(20.0),
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Assuming CurrencyForm is defined in another file
-            const SizedBox(height: 20),
+            CurrencyForm(),
           ],
         ),
-      )),
+      ),
     );
   }
 }

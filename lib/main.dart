@@ -1,7 +1,15 @@
+import 'package:Currency_Conversion/blocs/currency_bloc.dart';
+import 'package:Currency_Conversion/views/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    BlocProvider(
+      create: (_) => CurrencyBloc(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Money Exchange',
+      title: 'Currency Conversion',
       debugShowCheckedModeBanner: false,
+      home: const DashboardScreen(),
     );
   }
 }
