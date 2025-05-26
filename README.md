@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # sample_project
 
 Sample Project Money Exchange
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Currency_Conversion
+Currency Conversion Application created in Flutter Framework using Bloc for state management 
+>>>>>>> 6cdfde8d3d9ce34c7acad54d8db369feee8733fd
