@@ -1,21 +1,6 @@
-<<<<<<< HEAD
-# sample_project
-
-Sample Project Money Exchange
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Currency_Conversion
-Currency Conversion Application created in Flutter Framework using Bloc for state management 
->>>>>>> 6cdfde8d3d9ce34c7acad54d8db369feee8733fd
+Creating the Currency Conversion Application using to develop flutter framework
+Using Bloc for state management 
+Using Dio for api Request 
+Using Flutter dropdown for dropdown button 
+Select the from country and enter the amount and select the to country then click the convert button the amount will change and showing the to input field
+The conversion history data's are showing the below the form ![image](https://github.com/user-attachments/assets/c470029a-dffe-4989-9648-5dba5d13a9a1)
