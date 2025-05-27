@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Currency Conversion',
       debugShowCheckedModeBanner: false,
-      home: const DashboardScreen(),
+      home: const CurrencyScreen(),
     );
   }
 }

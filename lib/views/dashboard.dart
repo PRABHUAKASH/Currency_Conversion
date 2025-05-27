@@ -1,31 +1,45 @@
-import 'package:Currency_Conversion/views/currency_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../blocs/currency_bloc.dart';
+import '../views/currency_form.dart';
+import '../views/history_list.dart';
+import '../models/conversion_history.dart';
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
-
-  @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen> {
-  final List<dynamic> historyList = [];
+class CurrencyScreen extends StatelessWidget {
+  const CurrencyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Currency Converter",
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.white)),
+        title: const Text(
+          'Currency Converter',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.blue,
       ),
       body: SafeArea(
         child: Column(
           children: [
-            CurrencyForm(),
+            const CurrencyForm(), // ⬅️ Form stays at the top
+            const SizedBox(height: 20),
+            Expanded(
+              child: BlocBuilder<CurrencyBloc, CurrencyState>(
+                builder: (context, state) {
+                  List<ConversionHistory> history = [];
+
+                  if (state is CurrencyConverted) {
+                    history = state.historyList;
+                  }
+
+                  return HistoryList(history: history);
+                },
+              ),
+            ),
           ],
         ),
       ),
